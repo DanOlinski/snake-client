@@ -17,6 +17,16 @@ const connect = function() {
     console.log("Server says: ", data);
   });
 
+  //this function confirms(logs into the terminal), if the connection was successful
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server")
+  })
+
+  //this function sends a message to the server
+  conn.on("connect", () => {
+    conn.write('Name: EAT');
+  });
+
   return conn;
 
 };
