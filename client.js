@@ -5,7 +5,7 @@ const connect = function() {
 
   //this function connects to a server through an IP address and specified port
   const conn = net.createConnection({
-    // the keyword local host only works if you are connecting with yout own computer as a test. To connect to another computer you need to replace the keyword with the IP you want to connect to
+    // the keyword local host only works if you are connecting with your own computer as a test. To connect to another computer you need to replace the keyword with the IP you want to connect to
     host: 'localhost',
     port: 50541
   });
@@ -26,7 +26,7 @@ const connect = function() {
     conn.write('Name: EAT');
     
     /*
-    //move sneak up
+    //this test code moves the snake in the up direction automatically
     const moveUp = function(repeat){
       let timer = 100;
       for (i = 0; i < repeat; i++) {
