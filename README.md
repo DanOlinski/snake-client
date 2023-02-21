@@ -14,8 +14,8 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot description"](./screenShots/immage1.jpg)
-!["screenshot description"](./screenShots/immage2.jpg)
+!["screenshot description"](./screenShots/immage1.JPG)
+!["screenshot description"](./screenShots/immage2.JPG)
 
 
 ## Getting Started
