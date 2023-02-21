@@ -1,5 +1,6 @@
 const net = require("net");
 const {IP, PORT} = require('./constants')
+
 //this function handles different aspects of the network connection to the server where the game Snek runs
 const connect = function() {
 
@@ -10,7 +11,7 @@ const connect = function() {
   });
   conn.setEncoding("utf8");
 
-  //this function get's anny data that the server sends to client and logs it in the clients terminal.
+  //this function gets anny data that the server sends to the client and logs it in the client's terminal.
   conn.on("data", (data) => {
     console.log("Server says: ", data);
   });
@@ -20,7 +21,7 @@ const connect = function() {
     console.log("Successfully connected to game server");
   });
 
-  //this function sends messages to the server
+  //this function sends messages to the server (defines player name)
   conn.on("connect", () => {
     conn.write('Name: EAT');
     
