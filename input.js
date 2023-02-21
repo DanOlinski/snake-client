@@ -1,3 +1,5 @@
+const keyMaping = require('./constants');
+
 //this variable allows to run the connect function located in client.js
 let connection;
 
@@ -17,26 +19,14 @@ const setupInput = function(conn) {
 //this function is called as an argument in the stdin.on function above. it's purpose is to recognize pre determained keys(typed into the console) and complete an action accordingly
 const handleUserInput = function(key) {
   //anything types will show up as '.' in the terminal
-  process.stdout.write('.');
+  process.stdout.write('');
   //ctrl+c will terminate this app
   if (key === '\u0003') {
     process.exit();
   }
 
-  //The if statements below sends movement commands to the server (w=up, s=down, d=right, a=left)
-  if (key === 'w' || key === 'W') {
-    connection.write('Move: up');
-  } else if (key === 's' || key === 'S') {
-    connection.write('Move: down');
-  } else if (key === 'd' || key === 'D') {
-    connection.write('Move: right');
-  } else if (key === 'a' || key === 'A') {
-    connection.write('Move: left');
-  } else if (key === 'q' || key === 'Q') {
-    connection.write('Say: !!');
-  } else if (key === 'e' || key === 'E') {
-    connection.write('Say: Charge!');
-  }
+  //The statement below sends movement commands to the server (w=up, s=down, d=right, a=left, e=message: !!, q=message Charge!!)
+  connection.write(keyMaping.keyMap[key]);
 };
 
 module.exports = setupInput;
