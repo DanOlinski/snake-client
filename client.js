@@ -9,7 +9,7 @@ const connect = function() {
     host: 'localhost',
     port: 50541
   });
-
+  console.log('Connecting ...');
   conn.setEncoding("utf8");
 
   //this function get's anny data that the server sends to client and logs it in the clients terminal.
