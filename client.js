@@ -19,16 +19,26 @@ const connect = function() {
 
   //this function confirms(logs into the terminal), if the connection was successful
   conn.on('connect', () => {
-    console.log("Successfully connected to game server")
-  })
-
-  //this function sends a message to the server
-  conn.on("connect", () => {
-    conn.write('Name: EAT');
+    console.log("Successfully connected to game server");
   });
 
+  //this function sends messages to the server
+  conn.on("connect", () => {
+    conn.write('Name: EAT');
+    
+    /*
+    //move sneak up
+    const moveUp = function(repeat){
+      let timer = 100;
+      for (i = 0; i < repeat; i++) {
+        setTimeout(() => conn.write('Move: up'), timer)
+        timer += 100;
+      }
+    }
+    moveUp(100)
+    */
+  });
   return conn;
-
 };
 
-module.exports = connect
+module.exports = connect;
